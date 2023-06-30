@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs'
 import { Inter } from 'next/font/google'
 
 import './globals.css'
@@ -11,8 +12,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full scroll-smooth antialiased">
-      <body className="">{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className="scroll-smooth  antialiased">
+        <body className="bg-lime-50">{children}</body>
+      </html>
+    </ClerkProvider>
   )
 }

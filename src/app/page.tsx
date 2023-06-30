@@ -4,13 +4,13 @@ import Header from '@/layout/header/header'
 
 export default function Home() {
   return (
-    <div className="flex h-screen w-full flex-col bg-lime-50 text-slate-200">
+    <div className="flex w-full flex-col">
       <Header />
       <Banner />
 
-      <section className="mx-10 flex h-screen items-center justify-center">
+      <main className="mx-auto flex max-w-7xl items-center justify-center p-8">
         <GridOptions />
-      </section>
+      </main>
     </div>
   )
 }
