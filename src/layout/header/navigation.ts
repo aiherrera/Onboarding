@@ -1,4 +1,3 @@
-import { ForwardRefExoticComponent, RefAttributes, SVGProps } from 'react'
 import {
   ArrowPathIcon,
   ChartPieIcon,

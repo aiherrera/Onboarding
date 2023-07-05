@@ -1,8 +1,12 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { currentUser } from '@clerk/nextjs'
+import { User } from '@clerk/nextjs/dist/types/server'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import { Link as EmailLink } from '@react-email/link'
 import Image from 'next/image'
 
-const ProfileHeader = () => {
+const ProfileHeader = async () => {
+  const { firstName, lastName } = (await currentUser()) as User
+
   return (
     <section>
       <div>
@@ -19,10 +23,14 @@ const ProfileHeader = () => {
               alt=""
             />
           </div>
+
           <div className="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
             <div className="mt-6 min-w-0 flex-1 sm:hidden md:block">
-              <h1 className="truncate text-2xl font-bold text-gray-900">Alain Iglesias</h1>
+              <h1 className="truncate text-lg lg:text-2xl font-bold text-gray-900">
+                {firstName} {lastName}
+              </h1>
             </div>
+
             <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
               <EmailLink
                 href="mailto:alain.iglesias@globant.com?subject = Feedback&body = Message"
@@ -33,9 +41,6 @@ const ProfileHeader = () => {
               </EmailLink>
             </div>
           </div>
-        </div>
-        <div className="mt-6 hidden min-w-0 flex-1 sm:block md:hidden">
-          <h1 className="truncate text-2xl font-bold text-gray-900">Alain</h1>
         </div>
       </div>
     </section>

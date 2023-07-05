@@ -1,13 +1,15 @@
 import { z } from 'zod'
 
+const REQUIRED_FIELD = 'This field is required'
+
 export const GlobantProfileSchema = z.object({
-  first_name: z.string().min(1, { message: 'This field is required' }),
-  last_name: z.string().min(1, { message: 'This field is required' }),
+  firstName: z.string().min(1, { message: REQUIRED_FIELD }),
+  lastName: z.string().min(1, { message: REQUIRED_FIELD }),
   email: z
     .string()
-    .min(1, { message: 'This field is required' })
+    .min(1, { message: REQUIRED_FIELD })
     .email()
     .regex(/^[^\s@]+@globant\.com$/i, "It doesn't looks like a globant.com email 😕"),
   country: z.string(),
-  globant_position: z.string(),
+  globantPosition: z.string(),
 })

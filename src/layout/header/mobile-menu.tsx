@@ -11,8 +11,8 @@ import { useStore } from '@/store/use-store'
 import FlyoutMenuItem from './flyout-menu-item'
 
 const MobileMenu = () => {
-  const isOpen = useStore.useIsOpen()
-  const toggle = useStore.useToggle()
+  const isOpen = useStore(state => state.isOpen)
+  const toggle = useStore(state => state.toggle)
 
   return (
     <Dialog as="div" className="xl:hidden" open={isOpen} onClose={() => toggle(false)}>

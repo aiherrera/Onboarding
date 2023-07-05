@@ -1,8 +1,10 @@
+import Link from 'next/link'
+
 import { ACTIONS } from './constants'
 
 const GridOptions = () => {
   return (
-    <div className="max-w-6xl divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow-md shadow-[#BED731] sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
+    <div className="my-10 max-w-6xl cursor-pointer divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow-md shadow-[#BED731] sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
       {ACTIONS.map((action, actionIdx) => (
         <div
           key={action.title}
@@ -24,14 +26,14 @@ const GridOptions = () => {
             </span>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8  cursor-pointer">
             <h3 className="text-base font-semibold leading-6 text-gray-900">
-              <a href={action.href} className="focus:outline-none">
+              <Link href={action.href} className="focus:outline-none">
                 <span className="absolute inset-0" aria-hidden="true" />
                 {action.title}
-              </a>
+              </Link>
             </h3>
-            <p className="mt-2 text-sm text-gray-500">{action.description}</p>
+            <p className="mt-2 cursor-pointer text-sm text-gray-500">{action.description}</p>
           </div>
 
           <span
