@@ -7,6 +7,7 @@ export type ZustandHookSelectors<StateType> = {
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
 
 export function generateSelectorHooks<StateType extends object>(store: UseBoundStore<StoreApi<StateType>>) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const storeIn = store as any
 
   Object.keys(storeIn.getState()).forEach(key => {

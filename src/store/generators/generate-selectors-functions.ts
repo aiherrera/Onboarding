@@ -7,6 +7,7 @@ export interface ZustandFuncSelectors<StateType> {
 }
 
 export function generateSelectorFunctions<StateType extends object>(store: UseBoundStore<StoreApi<StateType>>) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const storeIn = store as any
 
   storeIn.use = {}
