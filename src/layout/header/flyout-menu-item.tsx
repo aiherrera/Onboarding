@@ -13,7 +13,7 @@ interface FlyoutMenuItemProps {
 const FlyoutMenuItem: FC<FlyoutMenuItemProps> = ({ name, items, cta }) => {
   return (
     <Popover className="relative">
-      <Popover.Button className="inline-flex items-center gap-x-1 px-3 py-2 text-base font-semibold leading-7 text-gray-900">
+      <Popover.Button className="inline-flex items-center gap-x-1 py-2 text-base font-semibold leading-7 text-gray-900">
         <span>{name}</span>
         <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
       </Popover.Button>

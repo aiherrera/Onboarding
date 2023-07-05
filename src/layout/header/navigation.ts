@@ -40,10 +40,6 @@ export const NAVIGATION: Map<NavigationItem, NavigationData> = new Map([
     { name: 'Cursos', href: '#', hasDeepEl: false },
     { items: [], cta: [] },
   ],
-  [
-    { name: 'Centro de recursos', href: '#', hasDeepEl: false },
-    { items: [], cta: [] },
-  ],
   // Example with call to actions
   [
     { name: 'Solutions', href: '#', hasDeepEl: true },
